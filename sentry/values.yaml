@@ -215,6 +215,10 @@ snuba:
   api:
     replicas: 1
     env: []
+    # prevent entrypoint from using `gosu` if securityContext.runAsUser is set
+    # command:
+    #   - snuba
+    #   - api
     probeInitialDelaySeconds: 10
     liveness:
       timeoutSeconds: 2
